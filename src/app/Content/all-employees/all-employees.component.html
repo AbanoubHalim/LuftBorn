@@ -1,0 +1,32 @@
+<div class="m-3">
+  <div class="table-responsive">
+    <table class="table table-bordered table-centered table-striped">
+      <thead class="thead-light">
+        <tr>
+          <th>Name</th>
+          <th>Title</th>
+          <th>Age</th>
+          <th>Phone Number</th>
+          <th>Address</th>
+          <th>Job Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of result.responseObject">
+          <td>{{item.name}}</td>
+          <td>{{item.title}}</td>
+          <td>{{item.age}}</td>
+          <td>{{item.phoneNumber}}</td>
+          <td> {{item.address}}</td>
+          <td>{{item.jobDescription}}</td>
+          
+          <td>
+            <button type="button" (click)="Delete(item)" class="btn btn-danger">Delete</button>
+            <button type="button" (click)="OpenDetails(item.id)" class="btn btn-info ms-2">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
